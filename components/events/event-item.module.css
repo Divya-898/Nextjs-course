@@ -50,7 +50,7 @@
     white-space: pre;
   }
   
-  /* .actions {
+  .actions {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -62,7 +62,7 @@
   
   .actions a span {
     vertical-align: middle;
-  } */
+  }
   
   .icon {
     margin-left: 0.5rem;
@@ -96,8 +96,8 @@
       margin: 1rem 0;
     }
   
-    /* .actions {
+    .actions {
       flex-direction: row;
       justify-content: flex-end;
-    } */
+    }
   }
