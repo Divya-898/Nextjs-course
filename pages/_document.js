@@ -5,6 +5,9 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body>
+      <div className="overlays"></div>
+      <div className="overlays"></div>
+      <div className="overlays"></div>
         <Main />
         <NextScript />
       </body>
