@@ -5,6 +5,7 @@ function UserIdPage(props) {
   export async function getServerSideProps(context) {
      const { params } = context;
     const userId = params.uid
+    console.log(userId)
     return {
       props: {
         id: 'userid-' + userId

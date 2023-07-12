@@ -7,7 +7,6 @@ export default function Home(props) {
   const {products} = props;
   return (
     <ul>
-    <li>hello</li>
     {products.map((product) => <li key={product.id}>
     <Link href={`/products/${product.id}`}>{product.title}</Link></li>)}
   </ul>
