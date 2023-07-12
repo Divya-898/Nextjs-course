@@ -23,6 +23,7 @@ function LastSalesPage(props) {
    
   //  useEffect(()=>{
   //       setIsLoading(true)
+  //       if(data){
   //    fetch('https://nextjs-course-b7916-default-rtdb.firebaseio.com/sales.json')
   //    .then(response => response.json())
   //    .then(data =>{
@@ -36,7 +37,9 @@ function LastSalesPage(props) {
   //       setSales(transformedSales);
   //       setIsLoading(false)
   //    })
-  //   },[])
+  //   }
+     
+  //   },[data])
     
 if(error){
         return <p>Failed to reload</p>
@@ -63,6 +66,22 @@ if(error){
 }
 // server side fetching
 export async function getStaticProps() {
+    const response = await fetch(
+      'https://nextjs-course-b7916-default-rtdb.firebaseio.com/sales.json'
+    );
+    const data = await response.json();
+    const transformedSales = [];
+    for (const key in data) {
+      transformedSales.push({
+        id: key,
+        username: data[key].username,
+        valume: data[key].valume,
+      });
+    }
+  
+    return { props: { sales: transformedSales } };
+  }
+  export async function getServerSideProps() {
     const response = await fetch(
       'https://nextjs-course-b7916-default-rtdb.firebaseio.com/sales.json'
     );
